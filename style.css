@@ -155,3 +155,30 @@ hr {
         width: 100%;
     }
 }
+.supporters{
+    text-align:center;
+    padding:60px 20px;
+}
+
+.supporter-card{
+    display:inline-block;
+    margin:20px;
+    max-width:300px;
+}
+
+.supporter-card img{
+    width:100%;
+    border:5px solid #d4af37;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.3);
+}
+
+.supporter-card h3{
+    margin-top:15px;
+}
+
+.ack{
+    max-width:900px;
+    margin:30px auto;
+    line-height:1.8;
+    }
