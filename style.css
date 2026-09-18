@@ -1,9 +1,93 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: #f5f7fa;
     color: #222;
     line-height: 1.6;
+}
+
+/* HOME PAGE */
+
+.home-page {
+    min-height: 100vh;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+        url("images/Background.jpg") center center / cover no-repeat;
+    background-attachment: fixed;
+}
+
+.home-overlay {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    color: white;
+}
+
+.home-logo {
+    width: 120px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.home-overlay h1 {
+    font-size: 42px;
+    line-height: 1.2;
+    margin: 10px 0;
+    text-shadow: 0 3px 10px rgba(0,0,0,0.7);
+}
+
+.tagline {
+    font-size: 18px;
+    font-style: italic;
+    margin: 10px 0 20px;
+}
+
+.archive-message {
+    font-size: 17px;
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+.home-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    max-width: 700px;
+}
+
+.home-buttons a {
+    color: white;
+    text-decoration: none;
+    background: rgba(0, 51, 102, 0.85);
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.home-buttons a:hover {
+    background: #ffcc00;
+    color: #003366;
+    transform: translateY(-2px);
+}
+
+.copyright {
+    margin-top: 35px;
+    font-size: 14px;
+}
+
+/* OTHER PAGES */
+
+body:not(.home-page) {
+    background: #f5f7fa;
 }
 
 header {
@@ -30,12 +114,6 @@ nav a {
     border-radius: 5px;
     background: rgba(255,255,255,0.15);
     display: inline-block;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    background: #ffcc00;
-    color: #003366;
 }
 
 main {
@@ -57,40 +135,6 @@ h3 {
     color: #0055aa;
 }
 
-input,
-textarea,
-select {
-    width: 100%;
-    padding: 12px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    box-sizing: border-box;
-    font-size: 16px;
-}
-
-input[type="file"] {
-    border: none;
-    padding: 0;
-}
-
-button {
-    background: #003366;
-    color: white;
-    border: none;
-    padding: 14px 28px;
-    font-size: 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-button:hover {
-    background: #ffcc00;
-    color: #003366;
-}
-
 img {
     max-width: 100%;
     height: auto;
@@ -105,36 +149,65 @@ footer {
     margin-top: 40px;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-table,
-th,
-td {
-    border: 1px solid #ddd;
-}
-
-th {
-    background: #003366;
-    color: white;
-}
-
-th,
-td {
-    padding: 12px;
-    text-align: left;
-}
-
 hr {
     border: none;
     border-top: 1px solid #ddd;
     margin: 30px 0;
 }
 
+/* WINNERS */
+
+.winner {
+    text-align: center;
+    margin: 40px auto;
+    width: 100%;
+}
+
+.winner img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+
+/* MOBILE */
+
 @media (max-width: 768px) {
+
+    .home-page {
+        background-attachment: scroll;
+    }
+
+    .home-overlay {
+        padding: 30px 15px;
+    }
+
+    .home-overlay h1 {
+        font-size: 30px;
+    }
+
+    .tagline {
+        font-size: 15px;
+    }
+
+    .archive-message {
+        font-size: 15px;
+    }
+
+    .home-buttons {
+        width: 100%;
+    }
+
+    .home-buttons a {
+        width: 90%;
+    }
+
+    main {
+        margin: 15px;
+        padding: 20px;
+    }
 
     header h1 {
         font-size: 24px;
@@ -145,56 +218,4 @@ hr {
         margin: 8px auto;
         width: 90%;
     }
-
-    main {
-        margin: 15px;
-        padding: 20px;
-    }
-
-    button {
-        width: 100%;
-    }
 }
-.supporters{
-    text-align:center;
-    padding:60px 20px;
-}
-
-.supporter-card{
-    display:inline-block;
-    margin:20px;
-    max-width:300px;
-}
-
-.supporter-card img{
-    width:100%;
-    border:5px solid #d4af37;
-    border-radius:15px;
-    box-shadow:0 5px 20px rgba(0,0,0,.3);
-}
-
-.supporter-card h3{
-    margin-top:15px;
-}
-
-.ack{
-    max-width:900px;
-    margin:30px auto;
-    line-height:1.8;
-    }
-.winner {
-    text-align: center;
-    margin: 40px auto;
-    max-width: 100%;
-}
-
-.winner img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 8px;
-}
-
-.winner h3 {
-    margin-bottom: 5px;
-    }
