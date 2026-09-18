@@ -6,48 +6,59 @@
 
 <title>Bhutan Emerging Writers Poetry Contest 2026</title>
 
-<link rel="stylesheet" href="style.css?v=2">
+<link rel="stylesheet" href="style.css?v=3">
 </head>
 
 <body class="home-page">
+
+<!-- MENU -->
+<div class="menu-container">
+
+    <button class="menu-button" onclick="toggleMenu()">☰</button>
+
+    <div id="menu" class="menu">
+
+        <a href="about.html">About</a>
+        <a href="results.html">🏆 Results</a>
+        <a href="winners.html">Joint Winners</a>
+        <a href="judges.html">Judges</a>
+        <a href="rules.html">Contest Rules</a>
+        <a href="prizes.html">Prizes</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+
+    </div>
+
+</div>
 
 <div class="home-overlay">
 
     <img src="images/logo.png" alt="Contest Logo" class="home-logo">
 
-    <h1>Bhutan Emerging Writers<br>Poetry Contest 2026</h1>
+    <h1>Bhutan Emerging Writers<br>
+    Poetry Contest 2026</h1>
 
     <p class="tagline">
         Discover New Voices • Celebrate Creativity • Inspire Bhutan
     </p>
 
     <p class="archive-message">
-        The inaugural contest has concluded.
-        <br>
+        The inaugural contest has concluded.<br>
         Thank you to every writer who shared their voice.
     </p>
-
-    <div class="home-buttons">
-
-        <a href="about.html">About</a>
-
-        <a href="results.html">🏆 Results</a>
-
-        <a href="winners.html">Joint Winners</a>
-
-        <a href="judges.html">Judges</a>
-
-        <a href="rules.html">Contest Rules</a>
-
-        <a href="contact.html">Contact</a>
-
-    </div>
 
     <p class="copyright">
         © 2026 Bhutan Emerging Writers Poetry Contest
     </p>
 
 </div>
+
+<script>
+function toggleMenu() {
+    document.getElementById("menu").classList.toggle("show");
+}
+</script>
 
 </body>
 </html>
