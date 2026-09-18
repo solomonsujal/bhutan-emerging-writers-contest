@@ -219,3 +219,47 @@ hr {
         width: 90%;
     }
 }
+/* HAMBURGER MENU */
+
+.menu-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+.menu-button {
+    background: rgba(0, 0, 0, 0.65);
+    color: white;
+    border: none;
+    font-size: 28px;
+    padding: 8px 13px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.menu {
+    display: none;
+    margin-top: 10px;
+    background: rgba(0, 0, 0, 0.9);
+    border-radius: 10px;
+    overflow: hidden;
+    min-width: 190px;
+}
+
+.menu.show {
+    display: block;
+}
+
+.menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 13px 18px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.menu a:hover {
+    background: #ffcc00;
+    color: #003366;
+}
