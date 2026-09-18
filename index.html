@@ -3,41 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Bhutan Emerging Writers Poetry Contest 2026</title>
-
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=4">
 </head>
 
 <body class="home-page">
 
-<!-- MENU -->
-<div class="menu-container">
+<button class="menu-button" onclick="toggleMenu()">☰</button>
 
-    <button class="menu-button" onclick="toggleMenu()">☰</button>
-
-    <div id="menu" class="menu">
-
-        <a href="about.html">About</a>
-        <a href="results.html">🏆 Results</a>
-        <a href="winners.html">Joint Winners</a>
-        <a href="judges.html">Judges</a>
-        <a href="rules.html">Contest Rules</a>
-        <a href="prizes.html">Prizes</a>
-        <a href="contact.html">Contact</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
-
-    </div>
-
+<div id="menu" class="menu">
+    <a href="#" onclick="openPage('about.html'); return false;">About</a>
+    <a href="#" onclick="openPage('results.html'); return false;">🏆 Results</a>
+    <a href="#" onclick="openPage('winners.html'); return false;">Joint Winners</a>
+    <a href="#" onclick="openPage('judges.html'); return false;">Judges</a>
+    <a href="#" onclick="openPage('rules.html'); return false;">Contest Rules</a>
+    <a href="#" onclick="openPage('prizes.html'); return false;">Prizes</a>
+    <a href="#" onclick="openPage('contact.html'); return false;">Contact</a>
+    <a href="#" onclick="openPage('privacy.html'); return false;">Privacy</a>
+    <a href="#" onclick="openPage('terms.html'); return false;">Terms</a>
 </div>
 
 <div class="home-overlay">
 
     <img src="images/logo.png" alt="Contest Logo" class="home-logo">
 
-    <h1>Bhutan Emerging Writers<br>
-    Poetry Contest 2026</h1>
+    <h1>Bhutan Emerging Writers<br>Poetry Contest 2026</h1>
 
     <p class="tagline">
         Discover New Voices • Celebrate Creativity • Inspire Bhutan
@@ -54,10 +44,65 @@
 
 </div>
 
+<!-- POPUP -->
+
+<div id="popup" class="popup">
+
+    <div class="popup-box">
+
+        <button class="close-button" onclick="closePage()">← Back</button>
+
+        <div id="popup-content">
+            Loading...
+        </div>
+
+    </div>
+
+</div>
+
 <script>
+
 function toggleMenu() {
     document.getElementById("menu").classList.toggle("show");
 }
+
+async function openPage(page) {
+
+    document.getElementById("menu").classList.remove("show");
+
+    const popup = document.getElementById("popup");
+    const content = document.getElementById("popup-content");
+
+    popup.classList.add("show");
+    content.innerHTML = "Loading...";
+
+    try {
+
+        const response = await fetch(page);
+        const html = await response.text();
+
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, "text/html");
+
+        const main = doc.querySelector("main");
+
+        if (main) {
+            content.innerHTML = main.innerHTML;
+        } else {
+            content.innerHTML = "<p>Unable to load this page.</p>";
+        }
+
+    } catch (error) {
+
+        content.innerHTML = "<p>Unable to load this information.</p>";
+
+    }
+}
+
+function closePage() {
+    document.getElementById("popup").classList.remove("show");
+}
+
 </script>
 
 </body>
